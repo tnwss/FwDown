@@ -1,0 +1,41 @@
+/*
+Theme Name: FwDown
+Author: Lonely
+Author URI: https://www.fromphoto.com/
+Description: 你一直都是我的最爱呀
+Version: 1.0.0
+Text Domain: FwDown
+*/
+
+
+/*顶部导航栏*/
+
+.head-top img {
+    width: 161px;
+}
+.head-top {
+    background: rgb(0 0 0 / 31%);
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+}
+.uk-navbar-nav>li>a {
+    color: #fff!important;
+    font-size: 16px!important;
+}
+
+.uk-navbar-nav {
+    gap: 50px!important;
+}
+/*Page*/
+
+/*footer*/
+.uk-offcanvas-bar {
+    width: 100%!important;
+    background: rgba(0, 0, 0, .95)!important;
+}
+.uk-offcanvas-bar a{
+    font-size: 20px!important;
+    margin: 20px 0!important;
+    
+}

@@ -1,0 +1,9 @@
+body .layui-layer{
+    border-radius: 8px;
+}
+body .layui-layer-dialog {
+    min-width: 120px;
+}
+body .layui-layer-border{
+    border: none;
+}
