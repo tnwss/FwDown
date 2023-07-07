@@ -14,6 +14,8 @@ get_header();
 	switch (get_post_type()) {
 	    case 'post':
 	        get_template_part( 'Module/post/single', 'post');
+	        break;
+
 		//商铺
 		case 'shop':
 			get_template_part( 'Module/shop/single', 'shop');

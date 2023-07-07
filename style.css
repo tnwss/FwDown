@@ -24,6 +24,10 @@ Text Domain: FwDown
     font-size: 16px!important;
 }
 
+.uk-sticky-fixed {
+    background: #272b81;
+}
+
 .uk-navbar-nav {
     gap: 50px!important;
 }

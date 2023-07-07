@@ -8,7 +8,9 @@
  * @subpackage  FwDown
  * @since Twenty  FwDown
  */
-
+$nub = get_option('posts_per_page',10);
+$ipaged = get_query_var('paged') ? get_query_var('paged') : 1;
+$ipages = ceil( $wp_query->found_posts / $nub);
 get_header();?>
 
 <?php
