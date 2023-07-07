@@ -326,81 +326,27 @@ $options[] = array(
 );
 //板块八
 	$options[] = array(
-		'name' => __( 'Input Text Mini', 'fwdown' ),
-		'desc' => __( 'A mini text input field.', 'fwdown' ),
-		'id' => 'example_text_mini',
-		'std' => 'Default',
-		'class' => 'mini',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => __( 'Input Text', 'fwdown' ),
-		'desc' => __( 'A text input field.', 'fwdown' ),
-		'id' => 'example_text',
-		'std' => 'Default Value',
-		'type' => 'text'
-	);
-
-	$options[] = array(
-		'name' => __( 'Example Info', 'fwdown' ),
-		'desc' => __( 'This is just some example information you can put in the panel.', 'fwdown' ),
-		'type' => 'info'
-	);
-
-	$options[] = array(
-		'name' => __( 'Input Checkbox', 'fwdown' ),
-		'desc' => __( 'Example checkbox, defaults to true.', 'fwdown' ),
-		'id' => 'example_checkbox',
-		'std' => '1',
-		'type' => 'checkbox'
-	);
-
-	$options[] = array(
-		'name' => __( 'Advanced Settings', 'fwdown' ),
+		'name' => __( '页面封面设置', 'fwdown' ),
 		'type' => 'heading'
 	);
-
-
-	$options[] = array(
-		'name' => __( 'Uploader Test', 'fwdown' ),
-		'desc' => __( 'This creates a full size uploader that previews the image.', 'fwdown' ),
-		'id' => 'example_uploader',
-		'type' => 'upload'
-	);
+	 $options[] = array(
+    'name' => __( '', 'fwdown' ),
+    'desc' => __( '关于我们页面', 'fwdown' ),
+    'id' => 'about_page_bg',
+    'type' => 'upload'
+    );
 	
 	$options[] = array(
-		'name' => __( 'Text Editor', 'fwdown' ),
-		'type' => 'heading'
-	);
-
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
-	 */
-
-	$wp_editor_settings = array(
-		'wpautop' => true, // Default
-		'textarea_rows' => 5,
-		'tinymce' => array( 'plugins' => 'wordpress,wplink' )
-	);
-
-	$options[] = array(
-		'name' => __( 'Default Text Editor', 'fwdown' ),
-		'desc' => sprintf( __( 'You can also pass settings to the editor.  Read more about wp_editor in <a href="%1$s" target="_blank">the WordPress codex</a>', 'fwdown' ), 'http://codex.wordpress.org/Function_Reference/wp_editor' ),
-		'id' => 'example_editor',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings
-	);
-	
-	$options[] = array(
-	    'name' => __( 'accordion', 'fwdown' ),
-		'desc' => __( 'accordion.', 'fwdown' ),
-		'id' => "example_accordion",
-		'type' => 'accordion'
-	);
+    'name' => __( '', 'fwdown' ),
+    'desc' => __( '产品集合', 'fwdown' ),
+    'id' => 'prodcut_page_bg',
+    'type' => 'upload'
+    );
+    $options[] = array(
+    'name' => __( '', 'fwdown' ),
+    'desc' => __( '文章集合', 'fwdown' ),
+    'id' => 'single_page_bg',
+    'type' => 'upload'
+    );
 	return $options;
 }
