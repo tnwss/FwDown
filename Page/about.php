@@ -5,289 +5,409 @@
 
 get_header();
 ?>
-
 <style>
-.about-intro p {
-    font-size: 18px;
-    line-height: 2;
-    color: #666;
+    .newbg {
+        background-size: cover;
+        /* 宽度拉满，保持比例 */
+        background-repeat: no-repeat;
+        /* 不重复 */
+        background-position: center center;
+        /* 图片居中对齐 */
+    }
+    .p-b80 {
+    padding-bottom: 80px;
 }
-.w101-strategy-desc {
-    font-size: 16px;
-    line-height: 1.576;
-    color: rgba(255, 255, 255, 0.85);
+.MuiSvgIcon-root {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  font-size: 1.5rem;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  flex-shrink: 0;
+  user-select: none;
 }
-.time-axis {
-    background-color: #f2f6f9;
-}
-.w101-time-axis-item {
-    position: relative;
+@media (min-width: 1020px) {
+  section.serviceSection {
+    height: 467px;
     width: 100%;
-    height: 208px;
-    text-align: center;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.serviceSection div.serviceDivContainer {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.serviceSection div.serviceDivContainer div.serviceDivLeft {
+    width: 50%;
+    height: 100%;
+    -webkit-clip-path: polygon(0 0, 52% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 52% 0, 100% 100%, 0 100%);
+  }
+  section.serviceSection div.serviceDivContainer div.serviceDivRight {
+    width: 50%;
+    padding: 80px 22px;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    span.serviceSmallHeading {
+    margin-bottom: 0;
+    line-height: 1rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1rem;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    h3.serviceH3 {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    border-bottom: 1px solid grey;
+    padding-bottom: 15px;
+    margin-bottom: 17px;
+    line-height: normal;
+  }
 
-.w101-time-axis-title {
-    display: block;
-    position: absolute;
-    z-index: 2;
-    bottom: 50%;
-    width: 100%;
-    max-height: 50%;
-    font-size: 24px;
-    line-height: 24px;
-    padding: 16px 16px 64px;
-    color: #024886;
-}
-
-.w101-time-axis-desc {
-    display: block;
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    width: 100%;
-    max-height: 50%;
-    font-size: 16px;
-    line-height: 24px;
-    padding: 16px;
-    color: #333333;
-    border-top: 1px solid #d9d9d9;
-}
- .w101-time-axis-title:before {
-    display: block;
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: 50%;
-    margin-left: -3px;
-    width: 6px;
-    height: 6px;
-    border-radius: 3px;
-    background-color: #EE922B;
-}
-.w101-time-axis-title:after {
-    display: block;
-    content: '';
-    position: absolute;
-    width: 2px;
-    height: 24px;
-    background-color: #EE922B;
-    bottom: 24px;
-    left: 50%;
-    margin-left: -1px;
-    border-radius: 1px;
-}
-.w101-time-axis-desc > span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    word-break: break-word;
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    p.servicePara {
+    margin-bottom: 20px;
+    line-height: 1.5rem;
+    letter-spacing: 0.025rem;
+    font-size: 1rem;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    a.bookNowAnchor {
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 0.25rem solid #ff8a00;
+    padding-bottom: 0.3125rem;
+    font-size: 1.125rem;
+    color: inherit;
+    text-transform: none;
+    letter-spacing: 0.025rem;
+    overflow: visible;
     white-space: normal;
-    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    transition: color 0.15s ease-in-out;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    transition: 1s;
+    cursor: pointer;
+  }
+
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    a.bookNowAnchor
+    .arrowBookNow {
+    color: #ff8a00;
+    font-weight: 700;
+    transition: 0.2s;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    a.bookNowAnchor:after {
+    content: "";
+    border: 2px solid #ff8a00;
+    position: absolute;
+    width: 0;
+    bottom: -4px;
+    transition: 1s;
+    background: #ff8a00;
+  }
+  section.invert {
+    background-color: #f4f4f4;
+  }
+  section.invert div.serviceDivContainer {
+    flex-direction: row-reverse;
+  }
+  section.invert div.serviceDivContainer div.serviceDivLeft {
+    width: 50%;
+    height: 100%;
+    -webkit-clip-path: polygon(52% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(52% 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
-@media screen and (max-width:760px){
-.w101-strategy-desc {
-    font-size: 12px;
-    line-height: 1.576;
-    color: rgba(255, 255, 255, 0.85);
+
+@media (min-width: 760px) and (max-width: 1020px) {
+  section.serviceSection,
+  section.serviceSection div.serviceDivContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.serviceSection,
+  section.serviceSection div.serviceDivContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.serviceSection div.serviceDivContainer {
+    height: 900px;
+    flex-direction: column;
+  }
+  section.serviceSection div.serviceDivContainer div.serviceDivLeft {
+    width: 100%;
+    height: 100%;
+  }
+  section.serviceSection div.serviceDivContainer div.serviceDivRight {
+    width: 80%;
+    height: 100%;
+    padding: 80px 50px;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    span.serviceSmallHeading {
+    margin-bottom: 0;
+    line-height: 1rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1rem;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    h3.serviceH3 {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    border-bottom: 1px solid grey;
+    padding-bottom: 15px;
+    margin-bottom: 17px;
+    line-height: normal;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    p.servicePara {
+    margin-bottom: 20px;
+    line-height: 1.5rem;
+    letter-spacing: 0.025rem;
+    font-size: 1.1rem;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    a.bookNowAnchor {
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 0.25rem solid #ff8a00;
+    padding-bottom: 0.3125rem;
+    font-size: 1.125rem;
+    color: inherit;
+    text-transform: none;
+    letter-spacing: 0.025rem;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: ellipsis;
+    transition: color 0.15s ease-in-out;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    transition: 1s;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    a.bookNowAnchor
+    .arrowBookNow {
+    color: #ff8a00;
+    font-weight: 700;
+    transition: 0.2s;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    a.bookNowAnchor:after {
+    content: "";
+    border: 2px solid #ff8a00;
+    position: absolute;
+    width: 0;
+    bottom: -4px;
+    transition: 1s;
+    background: #ff8a00;
+  }
 }
+
+@media (max-width: 760px) {
+  section.serviceSection,
+  section.serviceSection div.serviceDivContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  section.serviceSection,
+  section.serviceSection div.serviceDivContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  div.serviceDivContainer {
+    height: 900px;
+    flex-direction: column;
+  }
+  section.serviceSection div.serviceDivContainer div.serviceDivLeft {
+    width: 100%;
+    height: 100%;
+  }
+  section.serviceSection div.serviceDivContainer div.serviceDivRight {
+    width: 90%;
+    height: 100%;
+    padding: 80px 10px;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    span.serviceSmallHeading {
+    margin-bottom: 0;
+    line-height: 1rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1rem;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    h3.serviceH3 {
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    border-bottom: 1px solid grey;
+    padding-bottom: 15px;
+    margin-bottom: 17px;
+    line-height: normal;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    p.servicePara {
+    margin-bottom: 20px;
+    line-height: 1.5rem;
+    letter-spacing: 0.025rem;
+    font-size: 1.1rem;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    a.bookNowAnchor {
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 0.25rem solid #ff8a00;
+    padding-bottom: 0.3125rem;
+    font-size: 1.125rem;
+    color: inherit;
+    text-transform: none;
+    letter-spacing: 0.025rem;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: ellipsis;
+    transition: color 0.15s ease-in-out;
+    text-decoration: none;
+    transition: 0.3s;
+    position: relative;
+    transition: 1s;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    a.bookNowAnchor
+    .arrowBookNow {
+    color: #ff8a00;
+    font-weight: 700;
+    transition: 0.2s;
+  }
+  section.serviceSection
+    div.serviceDivContainer
+    div.serviceDivRight
+    a.bookNowAnchor:after {
+    content: "";
+    border: 2px solid #ff8a00;
+    position: absolute;
+    width: 0;
+    bottom: -4px;
+    transition: 1s;
+    background: #ff8a00;
+  }
 }
+
 </style>
-<!--背景图片-->
-<div class="relative uk-inline page-bg uk-light uk-text-center uk-width-1-1">
-    <img src="<?php echo fw_get_opt('company_bg_img');?>" style="width:100%">
-</div>
 
-<div class="pd15 single-bg">
-    <div class="uk-container uk-container-xlarge">
-        <ul class="uk-breadcrumb"><li class="crumb-item"><a href="<?php echo home_url();?>">Home</a></li><li class="current"><span>About us</span></li></ul>
- </div>
-</div>
-
-
-<!--四个服务-->
-
-<div class="home-bg uk-section">
-    <div class="uk-container uk-container-large">
-        <div class="w104-meta">
-            <div class="meta-wrap w104-wrapper">
-                <ul>
-                   <?php echo fw_get_opt('home_four_youshi');?>
-                </ul>
+<div class="newbg uk-light uk-cover-container uk-section uk-section-xlarge" style="background-image: url('<?php echo fw_get_opt('about_page_bg');?>');">
+    <div class="uk-position-cover" style="background-color: rgba(30, 26, 65, 0.76);"></div>
+    <div class="uk-container uk-position-relative">
+        <div class="uk-grid tm-grid-expand uk-child-width-1-1 uk-grid-margin">
+            <div class="uk-width-1-1@m uk-text-center">
+                <h1>ABOUT US</h1>
             </div>
         </div>
     </div>
 </div>
 
-<!--公司简介-->
-<div class="home-bg ">
-    <div class="uk-container uk-container-large">
-        <div class="about-intro">
-            <p>
-                <?php echo fw_get_opt('about_us_text');?>
-            </p>
-        </div>
-    </div>
-</div>
-
-<!--公司图片-->
-<div class="home-bg  uk-section">
-    <div class="uk-container uk-container-large">
-        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
-
-    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid">
-        <li>
-            <div class="uk-panel">
-                <img src="<?php echo fw_get_opt('about_us_img1');?>" alt="">
+<div class="about-page p-b80">
+    <section class="serviceSection ">
+        <div class="serviceDivContainer">
+            <div class="serviceDivLeft" style="background: url(/wp-content/uploads/2023/07/1-1-scaled.jpeg) 0% 0% / cover;">
             </div>
-        </li>
-         <li>
-            <div class="uk-panel">
-                <img src="<?php echo fw_get_opt('about_us_img2');?>" alt="">
-            </div>
-        </li>
-         <li>
-            <div class="uk-panel">
-                <img src="<?php echo fw_get_opt('about_us_img3');?>" alt="">
-            </div>
-        </li>
-         <li>
-            <div class="uk-panel">
-                <img src="<?php echo fw_get_opt('about_us_img4');?>" alt="">
-            </div>
-        </li>
-    </ul>
-
-    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-
-</div>
-    </div>
-</div>
-
-
-<!--背景简介-->
-<div class="uk-section-default uk-light">
-    <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-middle" style="background-image: url(<?php echo fw_get_opt('about_us_bg');?>);">
-        <div class="uk-container uk-container-large uk-text-center">
-            <p class="uk-h3"><?php echo fw_get_opt('about_us_bg_title');?></p>
-            <div class="w101-strategy-desc">
-               <?php echo fw_get_opt('about_us_bg_des');?>
+            <div class="serviceDivRight">
+                <span class="serviceSmallHeading">Our Model</span>
+                <h3 class="serviceH3">Who are we</h3>
+                <p class="servicePara">ProArk was formed upon seeing the need for professional and most importantly, reliable courier service. The platform connects drivers with individuals and organizations that need courier services. <br><br>We bring to the industry over years of experience in individual and business courier service. 
+                    <br><br><b>Our Model</b><br>“Passengers” generate the demand, “Drivers” supply the demand and “ProArk.ca” acts as the marketplace/facilitator to make this all happen seamlessly on a mobile platform.
+                </p>
+                <a class="bookNowAnchor">More <svg class="MuiSvgIcon-root arrowBookNow" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path></svg>
+                </a>
             </div>
         </div>
+
+        
+    </section>
+<section class="serviceSection invert">
+            <div class="serviceDivContainer">
+                <div class="serviceDivLeft" style="background: url(/wp-content/uploads/2023/07/2-1.jpeg) 0% 0% / cover;"></div>
+                <div class="serviceDivRight">
+                    <span class="serviceSmallHeading">Sustainability</span>
+                    <h3 class="serviceH3">Our Mission</h3>
+                    <p class="servicePara">Serving the needs of our customers and communities is paramount to our success. No matter how large or small the package is, it is given our utmost attention from the point of pick up to the point of delivery as the well-being of our people, business partners, and the public is of utmost importance.</p>
+                    <a class="bookNowAnchor">More 
+                        <svg class="MuiSvgIcon-root arrowBookNow" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="serviceSection ">
+            <div class="serviceDivContainer">
+                <div class="serviceDivLeft" style="background: url(/wp-content/uploads/2023/07/3.jpeg) 0% 0% / cover;"></div>
+                <div class="serviceDivRight">
+                    <span class="serviceSmallHeading">Supporting the Communities</span>
+                    <h3 class="serviceH3">Our Value</h3>
+                    <p class="servicePara">At the heart of every community, we've always looked for ways to link business, individuals and communities together and listen to what matters to them. <br><br>We provide services to many Canadians, and the important role we play in our community also allows us to deliver much more than parcels and letters.</p>
+                    <a class="bookNowAnchor">Learn More 
+                        <svg class="MuiSvgIcon-root arrowBookNow" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </div>
-</div>
 
-<!--专利图片-->
-<div class="uk-section">
-	<div class="uk-container uk-container-large">
-		<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
-
-			<ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@m uk-grid">
-				<li>
-					<div class="uk-panel uk-background-muted">
-						<img src="<?php echo fw_get_opt('zhuanli_img1');?>" alt="">
-					</div>
-				</li>
-				<li>
-					<div class="uk-panel uk-background-muted">
-						<img src="<?php echo fw_get_opt('zhuanli_img2');?>" alt="">
-					</div>
-				</li>
-				<li>
-					<div class="uk-panel uk-background-muted">
-						<img src="<?php echo fw_get_opt('zhuanli_img3');?>" alt="">
-					</div>
-				</li>
-				<li>
-					<div class="uk-panel uk-background-muted">
-						<img src="<?php echo fw_get_opt('zhuanli_img4');?>" alt="">
-					</div>
-				</li>
-				<li>
-					<div class="uk-panel uk-background-muted">
-						<img src="<?php echo fw_get_opt('zhuanli_img5');?>" alt="">
-					</div>
-				</li>
-			</ul>
-
-			<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
-				uk-slider-item="previous"></a>
-			<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
-				uk-slider-item="next"></a>
-
-		</div>
-	</div>
-</div>
-
-<!--发展历程-->
-<div class="uk-section time-axis">
-	<div class="uk-container uk-container-large uk-text-center">
-		<div class="home-title uk-padding">
-			<h3>HISTORICAL PROCESS</h3>
-		</div>
-		<div class="uk-position-relative uk-visible-toggle uk-margin-top" tabindex="-1" uk-slider>
-			<ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-1@s uk-child-width-1-4@m">
-				<li>
-					<div class="w101-time-axis-item">
-						<div class="w101-time-axis-title">
-							<span>2019</span>
-						</div>
-						<div class="w101-time-axis-desc">
-							<span>The group company is listed in Hong Kong with a market value of 100 billion</span>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w101-time-axis-item">
-						<div class="w101-time-axis-title">
-							<span>2020</span>
-						</div>
-						<div class="w101-time-axis-desc">
-							<span>Pet Life Pavilion was founded</span>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w101-time-axis-item">
-						<div class="w101-time-axis-title">
-							<span>2020</span>
-						</div>
-						<div class="w101-time-axis-desc">
-							<span>Pet Life Pavilion was founded</span>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w101-time-axis-item">
-						<div class="w101-time-axis-title">
-							<span>2020</span>
-						</div>
-						<div class="w101-time-axis-desc">
-							<span>Pet Life Pavilion was founded</span>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w101-time-axis-item">
-						<div class="w101-time-axis-title">
-							<span>2020</span>
-						</div>
-						<div class="w101-time-axis-desc">
-							<span>Pet Life Pavilion was founded</span>
-						</div>
-					</div>
-				</li>
-			</ul>
-
-			<a class="uk-position-center-left uk-position-small " href="#" uk-slidenav-previous
-				uk-slider-item="previous"></a>
-			<a class="uk-position-center-right uk-position-small" href="#" uk-slidenav-next
-				uk-slider-item="next"></a>
-
-		</div>
-	</div>
-</div>
 <?php
 get_footer();
